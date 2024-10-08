@@ -20,6 +20,7 @@ const checkBtn = document.querySelector('.check');
 let scoreElement = document.querySelector(".score");
 let messageElement = document.querySelector(".message");
 let numberElement = document.querySelector(".number");
+let highscoreElement = document.querySelector('.highscore');
 
 // Random secret number
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
@@ -42,6 +43,10 @@ const checkNumber = function () {
     document.querySelector("body").style.backgroundColor = "#60b347";
     numberElement.style.width = "30rem";
     numberElement.textContent = secretNumber;
+    const highscore = Number(highscoreElement.textContent);
+    if (score > highscore) {
+      highscoreElement.textContent = score;
+    }
   } 
   // When guess is wrong
   else {
